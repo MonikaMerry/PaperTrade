@@ -98,7 +98,7 @@
                                         @foreach ($list_data as $key=> $item)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>{{ $item->pair_name }}</td>
+                                                <td>{{Str::upper( $item->pair_name) }}</td>
                                                 <td>{{ $item->entry }}</td>
                                                 <td>{{ $item->entry_time }}</td>
                                                 <td>{{ $item->status }}</td>

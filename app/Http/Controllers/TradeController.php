@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Papertrade;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class TradeController extends Controller
 {
@@ -25,7 +26,7 @@ class TradeController extends Controller
         ]);
 
         $data = new Papertrade;
-        $data->pair_name = $request->pair_name;
+        $data->pair_name =Str::lower( $request->pair_name);
         $data->entry = $request->entry;
         $data->entry_time = now()->toDateTimeString();
         $data->user_id = Auth::user()->id;
